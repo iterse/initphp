@@ -1,20 +1,15 @@
 <?php
-/*********************************************************************************
- * InitPHP 3.8.2 国产PHP开发框架   框架入口文件 核心框架文件
- *-------------------------------------------------------------------------------
- * 版权所有: CopyRight By initphp.com
- * 您可以自由使用该源码，但是在使用过程中，请保留作者信息。尊重他人劳动成果就是尊重自己
- *-------------------------------------------------------------------------------
- * Author:zhuli Dtime:2014-11-25
- ***********************************************************************************/
-require_once('initphp.conf.php'); //导入框架配置类
-require_once('init/core.init.php'); //导入核心类文件
-require_once('init/exception.init.php'); //导入核心类文件
-require_once('init/interceptorInterface.init.php'); //导入拦截器接口 
 define("ERROR", "ERROR");
 define("WARN", "WARN");
 define("DEBUG", "DEBUG");
 define("INFO", "INFO");
+define("FROOT",__DIR__.DIRECTORY_SEPARATOR);
+
+require FROOT.'initphp.conf.php'; //导入框架配置类
+require FROOT.'init/core.init.php'; //导入核心类文件
+require FROOT.'init/exception.init.php'; //导入核心类文件
+require FROOT.'init/interceptorInterface.init.php'; //导入拦截器接口
+
 class InitPHP extends coreInit {
 
 	public static $time;
@@ -39,9 +34,9 @@ class InitPHP extends coreInit {
 	public static function init() {
 		self::isDebug();
 		try {
-			require(INITPHP_PATH . '/init/dispatcher.init.php');
-			require(INITPHP_PATH . '/init/run.init.php');
-			require(INITPHP_PATH . '/init/interceptor.init.php'); //拦截器
+			require INITPHP_PATH . '/init/dispatcher.init.php';
+			require INITPHP_PATH . '/init/run.init.php';
+			require INITPHP_PATH . '/init/interceptor.init.php'; //拦截器
 			$dispacher = InitPHP::loadclass('dispatcherInit');
 			$dispacher->dispatcher();
 			$run = InitPHP::loadclass('runInit');
@@ -683,7 +678,7 @@ class InitPHP extends coreInit {
 		<td>".date("Y-m-d H:i:s")."</td>
 		</tr>
 		</table>
-		<hr/>Powered by InitPHP/3.8</body>
+		<hr/>Powered by initphp</body>
 		</html>";
 		echo $html;
 	}

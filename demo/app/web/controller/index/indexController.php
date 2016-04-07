@@ -10,4 +10,12 @@ class indexController extends Controller {
 	public function run() {
 		$this->view->display("index/run");
 	}
+
+	/*public function before(){
+		echo '<br/>before test<br/>';
+	}
+
+	public function after(){
+		echo "after test<br/>";
+	}*/
 }

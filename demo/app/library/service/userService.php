@@ -1,13 +1,6 @@
 <?php
-/**
- * DEMO的Service测试
- * @author zhuli
- */
 class userService extends Service {
 
-	/**
-	 * @var userDao
-	 */
 	private $userDao;
 
 	public function getUser() {
@@ -25,5 +18,4 @@ class userService extends Service {
 		$this->userDao = InitPHP::getDao("user");
 		return $this->userDao->addUser($user);
 	}
-
 }

@@ -1,13 +1,5 @@
 <?php
 if (!defined('IS_INITPHP')) exit('Access Denied!');
-/*********************************************************************************
- * InitPHP 3.8.2 国产PHP开发框架  - 框架运行器，所有的框架运行都需要通过此控制器
- *-------------------------------------------------------------------------------
- * 版权所有: CopyRight By initphp.com
- * 您可以自由使用该源码，但是在使用过程中，请保留作者信息。尊重他人劳动成果就是尊重自己
- *-------------------------------------------------------------------------------
- * Author:zhuli Dtime:2014-11-25
- ***********************************************************************************/
 class runInit {
 
 	private $controller_postfix     = 'Controller'; //控制器后缀
@@ -43,9 +35,7 @@ class runInit {
 		$controllerObj = $this->checkRequest();
 		$this->interceptor = InitPHP::loadclass('interceptorInit');
 		$ret = $this->interceptor->preHandle(); //拦截器前置
-		if ($ret == false) {
-			return;
-		}
+		if ($ret == false) return;
 		$this->run_before_action($controllerObj);//前置Action
 		$this->run_action($controllerObj); //正常流程Action
 		$this->run_after_action($controllerObj); //后置Action
@@ -124,7 +114,6 @@ class runInit {
 		if (!method_exists($controller, $action)) {
 			InitPHP::initError('Can not find default method : ' . $action);
 		}
-		/* REST形式访问 */
 		$controller->$action();
 	}
 

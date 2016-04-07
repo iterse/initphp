@@ -1,8 +1,4 @@
 <?php
-/**
- * InitPHP开源框架 - DEM
- * @author zhuli
- */
 class serviceController extends Controller {
 
 	public $initphp_list = array("create", "create_post|post"); //Action白名单

@@ -6,7 +6,7 @@
 class helloController extends Controller {
 
 	//rest_post|post 方法名称 + | + HTTP方法名
-	public $initphp_list = array("white_list", "to_json", "rest_post|post", "rest_get|get", "get_info", "interceptor"); //Action白名单
+	public $initphp_list = array("white_list", "to_json" ,"rest_post|post", "rest_get|get", "get_info", "interceptor"); //Action白名单
 	
 	/**
 	 * Hello World DEMO
@@ -16,7 +16,6 @@ class helloController extends Controller {
 		echo "<br/><h1>Hello World!This is InitPHP FrameWork</h1>";
 		$this->view->display("demo/hello_run"); //使用模板
 	}
-
 	/**
 	 * 白名单使用 white_list方法名称需要放置到$initphp_list这个变量中
 	 */

@@ -1,15 +1,5 @@
 <?php
 if (!defined('IS_INITPHP')) exit('Access Denied!');
-/*********************************************************************************
- * InitPHP 3.5 国产PHP开发框架 - 异常类
- *-------------------------------------------------------------------------------
- * 版权所有: CopyRight By initphp.com
- * 您可以自由使用该源码，但是在使用过程中，请保留作者信息。尊重他人劳动成果就是尊重自己
- *-------------------------------------------------------------------------------
- * Author:zhuli Dtime:2014-11-25
- * $Modify Author:SK(michaellee)
- * $Modify Time:2014-4-22
- ***********************************************************************************/
 class exceptionInit extends Exception{
 	
 	/**
@@ -151,6 +141,7 @@ padding: 4px;}
 	 * @param string $code
 	 */
 	private static function _recordError($msg, $file, $line, $code){
+		$string = '';
 		$string.='['.date('Y-m-d h:i:s').']msg:'.$msg.';file:'.$file.';line:'.$line.';code:'.$code.'';
 		InitPHP::log($string, ERROR); //记录日志
 	}

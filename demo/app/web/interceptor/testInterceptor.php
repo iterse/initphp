@@ -7,7 +7,7 @@ class testInterceptor implements interceptorInterface {
 	 * @return boolean 返回布尔类型，如果返回false，则截断
 	 */
 	public function preHandle() {
-		echo "preHandle";
+		//echo "preHandle";
 		return true;
 	}
 
@@ -15,7 +15,7 @@ class testInterceptor implements interceptorInterface {
 	 * 后置拦截器，在所有操作进行完毕之后进行拦截
 	 */
 	public function postHandle() {
-		echo "postHandle";
+		//echo "postHandle";
+		return true;
 	}
-
 }

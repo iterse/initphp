@@ -116,6 +116,7 @@ class templateInit {
 	 */
 	private function check_path() {
 		if (!is_dir($this->template_path) || !is_readable($this->template_path)) InitPHP::initError('template path is unread!');
+		!is_dir($this->template_c_path) && mkdir($this->template_c_path);
 		if (!is_dir($this->template_c_path) || !is_readable($this->template_c_path)) InitPHP::initError('compiled path is unread!');
 		return true;
 	}

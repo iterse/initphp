@@ -1,12 +1,4 @@
 <?php
-/*********************************************************************************
- * InitPHP 3.8.2 国产PHP开发框架   
- *-------------------------------------------------------------------------------
- * 版权所有: CopyRight By initphp.com
- * 您可以自由使用该源码，但是在使用过程中，请保留作者信息。尊重他人劳动成果就是尊重自己
- *-------------------------------------------------------------------------------
- * Author:zhuli Dtime:2014-11-25
- ***********************************************************************************/
 /* 框架全局配置常量 */ 
 define('INITPHP_PATH', dirname(__FILE__));
 define('IS_INITPHP', 1);
@@ -18,7 +10,7 @@ $InitPHP_conf = array();
  * 站点URL配置
  * 必选参数
  */
-$InitPHP_conf['url'] = 'http://127.0.0.1/initphp_3.0/demo/';
+$InitPHP_conf['url'] = 'http://test.5210377.com';
 /**
  * 是否开启调试
  */
@@ -29,7 +21,7 @@ $InitPHP_conf['show_all_error'] = false; //是否显示所有错误信息，必�
  * 记录全局的框架层面的异常ERROR
  * 记录使用logInit工具类报的异常错误日志
  */
-$InitPHP_conf['log_dir'] = '/home/admin/logs/'; //日志目录,必须配置
+$InitPHP_conf['log_dir'] = '/tmp/logs/'; //日志目录,必须配置
 /**
  * 路由访问方式
  * 1. 如果为true 则开启path访问方式，否则关闭
@@ -67,27 +59,27 @@ $InitPHP_conf['dao']['path']  = 'library/dao/'; //后缀
 $InitPHP_conf['db']['driver']   = 'mysql'; //选择不同的数据库DB 引擎，一般默认mysqli,或者mysql
 //default数据库配置 一般使用中 $this->init_db('default')-> 或者 $this->init_db()-> 为默认的模型
 $InitPHP_conf['db']['default']['db_type']                   = 0; //0-单个服务器，1-读写分离，2-随机
-$InitPHP_conf['db']['default'][0]['host']                   = '127.0.0.1'; //主机
+$InitPHP_conf['db']['default'][0]['host']                   = 'localhost:3388'; //主机
 $InitPHP_conf['db']['default'][0]['username']               = 'root'; //数据库用户名
-$InitPHP_conf['db']['default'][0]['password']               = ''; //数据库密码
-$InitPHP_conf['db']['default'][0]['database']               = 't1'; //数据库
+$InitPHP_conf['db']['default'][0]['password']               = 'admin'; //数据库密码
+$InitPHP_conf['db']['default'][0]['database']               = 'test'; //数据库
 $InitPHP_conf['db']['default'][0]['charset']                = 'utf8'; //数据库编码   
 $InitPHP_conf['db']['default'][0]['pconnect']               = 0; //是否持久链接
 
 
 //test数据库配置 使用：$this->init_db('test')->  支持读写分离，随机选择（有两个数据库）
 $InitPHP_conf['db']['test']['db_type']                      = 2; //0-单个服务器，1-读写分离，2-随机
-$InitPHP_conf['db']['test'][0]['host']                      = '127.0.0.1'; //主机
+$InitPHP_conf['db']['test'][0]['host']                      = 'localhost:3388'; //主机
 $InitPHP_conf['db']['test'][0]['username']                  = 'root'; //数据库用户名
-$InitPHP_conf['db']['test'][0]['password']                  = ''; //数据库密码
-$InitPHP_conf['db']['test'][0]['database']                  = 't1'; //数据库
+$InitPHP_conf['db']['test'][0]['password']                  = 'admin'; //数据库密码
+$InitPHP_conf['db']['test'][0]['database']                  = 'test'; //数据库
 $InitPHP_conf['db']['test'][0]['charset']                   = 'utf8'; //数据库编码   
 $InitPHP_conf['db']['test'][0]['pconnect']                  = 0; //是否持久链接
 
-$InitPHP_conf['db']['test'][1]['host']                      = '127.0.0.1'; //主机
+$InitPHP_conf['db']['test'][1]['host']                      = 'localhost:3388'; //主机
 $InitPHP_conf['db']['test'][1]['username']                  = 'root'; //数据库用户名
-$InitPHP_conf['db']['test'][1]['password']                  = ''; //数据库密码
-$InitPHP_conf['db']['test'][1]['database']                  = 't1'; //数据库
+$InitPHP_conf['db']['test'][1]['password']                  = 'admin'; //数据库密码
+$InitPHP_conf['db']['test'][1]['database']                  = 'test'; //数据库
 $InitPHP_conf['db']['test'][1]['charset']                   = 'utf8'; //数据库编码   
 $InitPHP_conf['db']['test'][1]['pconnect']                  = 0; //是否持久链接
 
